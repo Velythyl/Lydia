@@ -29,7 +29,11 @@ class Node:
             if not is_foundation(d):
                 bla.append("ref("+classes[d].name+")")
 
-        print(f"""{self.name}: |{{{','.join(self.deps)}}} U {' U '.join(bla)}| = |{self.refs}| = {len(self.refs)}""")
+        also = " U "
+        if len(bla) == 0:
+            also = ""
+
+        print(f"""{self.name}: |{{{','.join(self.deps)}}}{also + ' U '.join(bla)}| = |{self.refs}| = {len(self.refs)}""")
 
 def calculate(node, dico, visited):
     if node in visited:
