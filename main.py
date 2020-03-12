@@ -92,6 +92,8 @@ if __name__ == "__main__":
         tableau = x.split(":")
         classes.append(Node(tableau[0], tableau[1].split(",")))
 
+    print("\nReport:\n\n\n\n")
+
     calc_all(classes)
     for c in classes:
         c.print_line(classes)
